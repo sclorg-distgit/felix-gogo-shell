@@ -1,0 +1,14 @@
+Index: src/main/java/org/apache/felix/gogo/shell/Activator.java
+===================================================================
+--- src/main/java/org/apache/felix/gogo/shell/Activator.java.orig	2016-02-24 01:14:26.559422653 +0200
++++ src/main/java/org/apache/felix/gogo/shell/Activator.java	2016-02-24 01:14:26.559422653 +0200
+@@ -178,6 +178,9 @@ public class Activator implements Bundle
+                 args = (args == null) ? "" : args;
+                 session.execute("gosh --login " + args);
+             }
++            catch (InterruptedException e){
++                   	// ignore
++            }
+             catch (Exception e)
+             {
+                 Object loc = session.get(".location");
